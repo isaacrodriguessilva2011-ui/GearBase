@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GearBase</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+        <h1 class="marca">Gear<span>Base</span></h1>
+
+        <button id="botaoMenu" onclick="alterarMenu()">☰</button>
+
+        <nav id="Menunavegacao">
+            <a href="#" onclick="mostrarPagina('inicio'); return false;">Início</a>
+            <a href="#" onclick="mostrarPagina('pc'); return false;">PC</a>
+            <a href="#" onclick="mostrarPagina('ps5'); return false;">PS5</a>
+            <a href="#" onclick="mostrarPagina('xbox'); return false;">Xbox</a>
+            <a href="#" onclick="mostrarPagina('arranjar'); return false;">Como arranjar</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ZONA DE COMPONENTES -->
+        <section id="zonaComponentes">
+
+            <p class="subtitulo">Tecnologia de maneira simples</p>
+
+            <div class="Pesquisa" id="pesquisaComponentes">
+                <input
+                    id="Pesquisa"
+                    type="text"
+                    placeholder="Pesquisar componentes"
+                    onkeydown="if (event.key === 'Enter') pesquisarVarios()"
+                >
+                <button onclick="pesquisarVarios()">Pesquisar</button>
+            </div>
+
+            <div id="resultados-pesquisa"></div>
+
+            <h2 id="tituloExplorar">Explora a tecnologia</h2>
+            <p id="textoExplorar">
+                Usa esta plataforma para descobrir como a tecnologia funciona.
+            </p>
+
+            <!-- DETALHES DO COMPONENTE -->
+            <div id="detalhesComponente">
+                <h2 id="nome">Descobre os Componentes</h2>
+
+                <p id="tipo"></p>
+
+                <p id="explicacao">
+                    Pesquisa por um componente para aprenderes como funciona.
+                </p>
+
+                <button
+                    id="botaoFecharComponente"
+                    onclick="fecharComponente()"
+                    hidden
+                >
+                    Fechar detalhes
+                </button>
+
+                <!-- DEFINIÇÕES DO GLOSSÁRIO -->
+                <div id="definicao-termo" hidden>
+                    <h3 id="termo-titulo"></h3>
+                    <p id="termo-texto"></p>
+                    <button onclick="fecharDefinicao()">Fechar definição</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ZONA DE RESOLUÇÃO DE PROBLEMAS -->
+        <section id="zonaProblemas" hidden>
+
+            <h2 id="tituloProblemas">Resolver um problema</h2>
+
+            <div class="Pesquisa" id="pesquisaProblemas">
+                <input
+                    id="PesquisaProblema"
+                    type="text"
+                    placeholder="Ex.: PC lento, PS5 aquece muito..."
+                    onkeydown="if (event.key === 'Enter') pesquisarProblema()"
+                >
+
+                <button onclick="pesquisarProblema()">
+                    Encontrar soluções
+                </button>
+            </div>
+
+            <div id="resultados-problema"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
